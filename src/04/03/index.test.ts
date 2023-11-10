@@ -1,4 +1,5 @@
 import * as Fetchers from '../fetchers'
+import { httpError } from '../fetchers/fixtures'
 import { getGreet } from '.'
 
 jest.mock('../fetchers')
@@ -21,5 +22,24 @@ describe('getGreet', () => {
     })
 
     await expect(getGreet()).resolves.toBe('Hello, taroyamada!')
+  })
+
+  test('データ取得失敗時', async () => {
+    jest.spyOn(Fetchers, 'getMyProfile').mockRejectedValueOnce(httpError)
+
+    await expect(getGreet()).rejects.toMatchObject({
+      err: { message: 'internal server error' },
+    })
+  })
+
+  test('データ取得失敗時、エラー相当のデータが例外としてストーされる', async () => {
+    expect.assertions(1)
+    jest.spyOn(Fetchers, 'getMyProfile').mockRejectedValueOnce(httpError)
+
+    try {
+      await getGreet()
+    } catch (err) {
+      expect(err).toMatchObject(httpError)
+    }
   })
 })
