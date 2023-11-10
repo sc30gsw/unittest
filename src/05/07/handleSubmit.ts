@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function handleSubmit(callback: (values: any) => Promise<void> | void) {
   return (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
