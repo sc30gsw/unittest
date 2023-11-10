@@ -1,0 +1,6 @@
+node_modules
+.github
+.story-book
+__reports__
+yarn.lock
+public
