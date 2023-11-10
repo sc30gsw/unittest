@@ -1,7 +1,6 @@
-import { checkConfig } from "./checkConfig"
+import { checkConfig } from './checkConfig'
 
 describe('checkConfig', () => {
-
   test('モック関数は実行時引数のオブジェクト検証ができる', () => {
     const mockFn = jest.fn()
     checkConfig(mockFn)
@@ -16,9 +15,8 @@ describe('checkConfig', () => {
     checkConfig(mockFn)
     expect(mockFn).toHaveBeenCalledWith(
       expect.objectContaining({
-        feature: { spy: true }
-      })
+        feature: { spy: true },
+      }),
     )
   })
 })
-

@@ -1,4 +1,4 @@
-import { greet } from "./greet"
+import { greet } from './greet'
 
 describe('greet', () => {
   test('モック関数は実行された', () => {
@@ -30,7 +30,7 @@ describe('greet', () => {
   test('モック関数は実行時の引数を記録している', () => {
     const mockFn = jest.fn()
     const greet = (message: string) => mockFn(message)
-    greet("hello")
+    greet('hello')
     expect(mockFn).toHaveBeenCalledWith('hello')
   })
 
