@@ -5,7 +5,7 @@ export const InputAccount = () => {
       <div>
         <label>
           メールアドレス
-          <input type="text" placeholder="example@test.com" />
+          <input type="email" placeholder="example@test.com" />
         </label>
       </div>
       <div>
