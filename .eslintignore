@@ -1,5 +1,6 @@
 node_modules
 .github
-.storybook
-public
+.story-book
+__reports__
 yarn.lock
+public

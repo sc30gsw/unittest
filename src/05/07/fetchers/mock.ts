@@ -1,13 +1,15 @@
-import * as Fetchers from '.'
+import * as Fetchers from '../fetchers'
 import { httpError, postMyAddressMock } from './fixtures'
 
-export function mockPostMyAddress(status = 201) {
-  if (status > 299) {
+const mockPostMyAddress = (status = 200) => {
+  if (status > 299)
     return jest
       .spyOn(Fetchers, 'postMyAddress')
       .mockRejectedValueOnce(httpError)
-  }
+
   return jest
     .spyOn(Fetchers, 'postMyAddress')
     .mockResolvedValueOnce(postMyAddressMock)
 }
+
+export default mockPostMyAddress
