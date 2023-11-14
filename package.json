@@ -8,7 +8,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint:fix": "eslint src --fix"
+    "lint": "eslint src --fix"
   },
   "dependencies": {
     "react": "^18.2.0",
